@@ -39,20 +39,20 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-forest-bg-primary">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-forest-bg-sidebar shadow-sm border-b border-forest-border">
         <div className="mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-forest-accent-primary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">GP</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">
+                <h1 className="text-xl font-bold text-forest-text-primary">
                   GAUR Police Dashboard
                 </h1>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-forest-text-secondary">
                   Goa Anti-fraud Unified Radar
                 </p>
               </div>
@@ -60,10 +60,10 @@ export default function DashboardPage() {
 
             <div className="flex items-center space-x-4">
               <div className="text-right">
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-forest-text-primary">
                   {officer.name}
                 </p>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-forest-text-secondary">
                   {officer.rank} • {officer.badge_number}
                 </p>
               </div>
@@ -83,18 +83,18 @@ export default function DashboardPage() {
       <main className="mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {/* Welcome Card */}
-          <Card className="p-6 col-span-full">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <Card className="p-6 col-span-full forest-card-gradient border-forest-border">
+            <h2 className="text-2xl font-bold text-forest-text-primary mb-2">
               Welcome back, {officer.name.split(' ')[0]}!
             </h2>
-            <p className="text-gray-600 mb-4">
-              You are logged in as <strong>{officer.rank}</strong> with {officer.roles.length} role(s).
+            <p className="text-forest-text-secondary mb-4">
+              You are logged in as <strong className="text-forest-text-primary">{officer.rank}</strong> with {officer.roles.length} role(s).
             </p>
             <div className="flex flex-wrap gap-2">
               {officer.roles.map((role) => (
                 <span
                   key={role.id}
-                  className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary"
+                  className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-forest-accent-primary/20 text-forest-accent-light"
                 >
                   {role.display_name}
                 </span>
@@ -103,26 +103,26 @@ export default function DashboardPage() {
           </Card>
 
           {/* System Status */}
-          <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          <Card className="p-6 forest-card-gradient border-forest-border">
+            <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
               System Status
             </h3>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Backend API</span>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className="text-sm text-forest-text-secondary">Backend API</span>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-forest-trend-up/20 text-forest-trend-up">
                   Connected
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Database</span>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className="text-sm text-forest-text-secondary">Database</span>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-forest-trend-up/20 text-forest-trend-up">
                   Online
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Authentication</span>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span className="text-sm text-forest-text-secondary">Authentication</span>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-forest-trend-up/20 text-forest-trend-up">
                   Active
                 </span>
               </div>
@@ -130,8 +130,8 @@ export default function DashboardPage() {
           </Card>
 
           {/* Quick Actions */}
-          <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <Card className="p-6 bg-forest-bg-quick-actions border-forest-border">
+            <h3 className="text-lg font-semibold text-forest-bg-primary mb-4">
               Quick Actions
             </h3>
             <div className="space-y-2">
@@ -199,30 +199,30 @@ export default function DashboardPage() {
           </Card>
 
           {/* Permissions */}
-          <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          <Card className="p-6 forest-card-gradient border-forest-border">
+            <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
               Your Permissions
             </h3>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-forest-text-secondary">
               <p className="mb-2">
-                <strong>Department:</strong> {officer.department}
+                <strong className="text-forest-text-primary">Department:</strong> {officer.department}
               </p>
               <p className="mb-2">
-                <strong>Minimum Role Level:</strong> {officer.minimum_role_level}
+                <strong className="text-forest-text-primary">Minimum Role Level:</strong> {officer.minimum_role_level}
               </p>
               <p>
-                <strong>Permissions:</strong> {officer.permissions.length} granted
+                <strong className="text-forest-text-primary">Permissions:</strong> {officer.permissions.length} granted
               </p>
             </div>
           </Card>
         </div>
 
         {/* API Documentation Link */}
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <Card className="p-6 forest-card-gradient border-forest-border">
+          <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
             Development Tools
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-forest-text-secondary mb-4">
             Access backend API documentation and system health monitoring.
           </p>
           <div className="flex space-x-4">

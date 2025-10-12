@@ -85,7 +85,7 @@ export default function ThreatCard({ threat, onAssign, onUpdateStatus }: ThreatC
   }
 
   return (
-    <Card className={`p-6 border-l-4 ${getSeverityColor(threat.risk_level)}`}>
+    <Card className={`p-6 border-l-4 forest-card-gradient ${getSeverityColor(threat.risk_level)}`}>
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
@@ -96,22 +96,22 @@ export default function ThreatCard({ threat, onAssign, onUpdateStatus }: ThreatC
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(threat.status)}`}>
               {threat.status.toUpperCase()}
             </span>
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-forest-text-secondary">
               ID: {threat.id}
             </span>
           </div>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-1">
+          <h3 className="text-lg font-semibold text-forest-text-primary mb-1">
             {threat.fraud_type.replace(/_/g, ' ').toUpperCase()}
           </h3>
 
-          <div className="flex items-center space-x-4 text-sm text-gray-600">
+          <div className="flex items-center space-x-4 text-sm text-forest-text-secondary">
             <span>Platform: {threat.source_platform}</span>
             <span>•</span>
             <span>Confidence: {(threat.confidence_score * 100).toFixed(1)}%</span>
           </div>
 
-          <p className="text-sm text-gray-700 mt-2 line-clamp-2">
+          <p className="text-sm text-forest-text-secondary mt-2 line-clamp-2">
             {threat.content_text}
           </p>
         </div>
@@ -129,26 +129,26 @@ export default function ThreatCard({ threat, onAssign, onUpdateStatus }: ThreatC
 
       {/* Info */}
       <div className="mb-4">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-forest-text-secondary">
           Created: {formatDate(threat.created_at)}
         </p>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-forest-text-secondary">
           Source ID: {threat.source_id}
         </p>
       </div>
 
       {/* Expanded Details */}
       {isExpanded && (
-        <div className="space-y-4 border-t pt-4">
+        <div className="space-y-4 border-t border-forest-border pt-4">
           {/* Full Content */}
           <div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Full Content</p>
-            <p className="text-sm text-gray-600 whitespace-pre-wrap">{threat.content_text}</p>
+            <p className="text-sm font-medium text-forest-text-primary mb-1">Full Content</p>
+            <p className="text-sm text-forest-text-secondary whitespace-pre-wrap">{threat.content_text}</p>
           </div>
 
           {/* Fraud Score */}
           <div>
-            <p className="text-sm font-medium text-gray-700 mb-1">Confidence Score</p>
+            <p className="text-sm font-medium text-forest-text-primary mb-1">Confidence Score</p>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
                 className={`h-2 rounded-full ${

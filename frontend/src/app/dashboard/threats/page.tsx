@@ -63,9 +63,9 @@ export default function ThreatsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-forest-bg-primary">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-forest-bg-sidebar shadow-sm border-b border-forest-border">
         <div className="mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -77,10 +77,10 @@ export default function ThreatsPage() {
                 ← Back to Dashboard
               </Button>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">
+                <h1 className="text-xl font-bold text-forest-text-primary">
                   Threat Timeline
                 </h1>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-forest-text-secondary">
                   Real-time fraud alerts and threat monitoring
                 </p>
               </div>
@@ -88,10 +88,10 @@ export default function ThreatsPage() {
 
             <div className="flex items-center space-x-4">
               <div className="text-right">
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-forest-text-primary">
                   {officer.name}
                 </p>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-forest-text-secondary">
                   {officer.rank} • {officer.badge_number}
                 </p>
               </div>
@@ -104,38 +104,38 @@ export default function ThreatsPage() {
       {!loading && stats && (
         <div className="mx-auto px-6 py-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <Card className="p-4 forest-card-gradient border-forest-border">
+              <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
                 Total Threats
               </h3>
-              <p className="text-3xl font-bold text-gray-900">
+              <p className="text-3xl font-bold text-forest-text-primary">
                 {stats.total || 0}
               </p>
             </Card>
 
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <Card className="p-4 forest-card-gradient border-forest-border">
+              <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
                 High Priority
               </h3>
-              <p className="text-3xl font-bold text-red-600">
+              <p className="text-3xl font-bold text-forest-error">
                 {stats.by_risk?.HIGH || 0}
               </p>
             </Card>
 
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <Card className="p-4 forest-card-gradient border-forest-border">
+              <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
                 Open Threats
               </h3>
-              <p className="text-3xl font-bold text-orange-600">
+              <p className="text-3xl font-bold text-forest-warning">
                 {stats.by_status?.open || 0}
               </p>
             </Card>
 
-            <Card className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <Card className="p-4 forest-card-gradient border-forest-border">
+              <h3 className="text-lg font-semibold text-forest-text-primary mb-2">
                 Medium Risk
               </h3>
-              <p className="text-3xl font-bold text-yellow-600">
+              <p className="text-3xl font-bold text-forest-accent-light">
                 {stats.by_risk?.MEDIUM || 0}
               </p>
             </Card>

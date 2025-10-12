@@ -40,15 +40,15 @@ export default function ThreatHeatmap({ data }: ThreatHeatmapProps) {
     return Math.max(...days.map((d) => d.count), 1)
   }, [days])
 
-  // Get color based on count
+  // Get color based on count - Light Forest theme
   const getColor = (count: number) => {
-    if (count === 0) return 'bg-gray-100'
+    if (count === 0) return 'bg-forest-heatmap-low/30'
 
     const intensity = count / maxCount
-    if (intensity > 0.75) return 'bg-red-600'
-    if (intensity > 0.5) return 'bg-red-500'
-    if (intensity > 0.25) return 'bg-orange-400'
-    return 'bg-yellow-300'
+    if (intensity > 0.75) return 'bg-forest-heatmap-high'
+    if (intensity > 0.5) return 'bg-forest-heatmap-mid'
+    if (intensity > 0.25) return 'bg-forest-accent-primary'
+    return 'bg-forest-heatmap-low'
   }
 
   // Group by weeks
@@ -119,18 +119,18 @@ export default function ThreatHeatmap({ data }: ThreatHeatmapProps) {
             </div>
           </div>
 
-          {/* Legend */}
-          <div className="flex items-center gap-2 mt-4 text-xs text-gray-600">
+          {/* Legend - Light Forest theme */}
+          <div className="flex items-center gap-2 mt-4 text-xs text-forest-text-secondary">
             <span>Less</span>
             <div className="flex gap-1">
-              <div className="w-3 h-3 bg-gray-100 rounded-sm"></div>
-              <div className="w-3 h-3 bg-yellow-300 rounded-sm"></div>
-              <div className="w-3 h-3 bg-orange-400 rounded-sm"></div>
-              <div className="w-3 h-3 bg-red-500 rounded-sm"></div>
-              <div className="w-3 h-3 bg-red-600 rounded-sm"></div>
+              <div className="w-3 h-3 bg-forest-heatmap-low/30 rounded-sm"></div>
+              <div className="w-3 h-3 bg-forest-heatmap-low rounded-sm"></div>
+              <div className="w-3 h-3 bg-forest-accent-primary rounded-sm"></div>
+              <div className="w-3 h-3 bg-forest-heatmap-mid rounded-sm"></div>
+              <div className="w-3 h-3 bg-forest-heatmap-high rounded-sm"></div>
             </div>
             <span>More</span>
-            <span className="ml-4">Max: {maxCount} threats/day</span>
+            <span className="ml-4 text-forest-text-primary">Max: {maxCount} threats/day</span>
           </div>
         </div>
       </div>
