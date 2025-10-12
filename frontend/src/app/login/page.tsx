@@ -59,13 +59,13 @@ export default function LoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-48 h-48 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
-            <img
-              src="gaurlogo.png"
+            <Image
+              src="/gaurlogo.png"
               width={160}
-              height={50}
-              alt="logo"
+              height={160}
+              alt="Goa Police Logo"
               className="rounded-full"
-            ></img>
+            />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             GAUR Police System
