@@ -1,0 +1,300 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# ============================================
+# Node.js / Next.js (Frontend)
+# ============================================
+
+# Dependencies
+/node_modules
+/frontend/node_modules
+/functions/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+/coverage
+/frontend/coverage
+
+# Next.js
+/.next/
+/frontend/.next/
+/out/
+/frontend/out/
+
+# Production builds
+/build
+/dist
+/frontend/build
+/frontend/dist
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# ============================================
+# Python / Backend
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+backend/venv/
+backend/env/
+ai-service/venv/
+ai-service/.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================
+# Environment Variables & Secrets
+# ============================================
+
+# Environment files
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase service account keys
+firebase-service-account-key.json
+service-account-*.json
+google-credentials.json
+
+# Firebase emulator data
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# ============================================
+# Database & Data Files
+# ============================================
+
+# PostgreSQL
+*.sql
+*.backup
+*.dump
+pgdata/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Database backups
+backups/
+*.bak
+
+# ============================================
+# GAUR Project Specific
+# ============================================
+
+# Scraped data and images
+backend/data/
+backend/data/images/
+backend/data/facebook/
+backend/data/telegram/
+backend/scraped_data/
+
+# Logs
+logs/
+*.log
+/tmp/*.log
+backend/logs/
+frontend/logs/
+/tmp/gaur_backend.log
+
+# Screenshots from scraper
+*.png
+*.jpg
+*.jpeg
+!frontend/public/**/*.png
+!frontend/public/**/*.jpg
+!frontend/public/**/*.jpeg
+
+# AI model cache and downloaded models
+backend/ai_service/.cache/
+backend/ai_service/models/
+backend/models/
+models/
+/models/
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.pickle
+
+# Playwright browsers
+.playwright/
+ms-playwright/
+
+# Browser user data (scraper sessions)
+browser_data/
+user_data/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw?
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# OS Generated Files
+# ============================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ============================================
+# Miscellaneous
+# ============================================
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+debug.log
+
+# PEM files (certificates/keys)
+*.pem
+*.key
+*.cert
+
+# Claude Code
+.claude/
+
+# Archive folder (keep structure but not contents if large)
+# archive/
+
+# Documentation temp files
+*.md~
+.doctrees/

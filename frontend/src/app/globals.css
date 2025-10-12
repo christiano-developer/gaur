@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 220 100% 27%; /* Police Blue #1E3A8A */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 25 100% 60%; /* Saffron #FF9933 */
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 100% 27%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 220 100% 27%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 25 100% 60%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 220 100% 27%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Goa Police Theme Enhancements */
+.goa-police-gradient {
+  background: linear-gradient(135deg, #1E3A8A 0%, #000080 100%);
+}
+
+.goa-tricolor-accent {
+  background: linear-gradient(90deg, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
+  height: 4px;
+}
+
+.police-badge-shadow {
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+}
+
+.goa-card {
+  @apply bg-white border border-police-blue/10 shadow-lg;
+}
+
+/* Police rank badges */
+.rank-superadmin {
+  @apply bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.rank-inspector {
+  @apply bg-police-blue text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.rank-senior-constable {
+  @apply bg-goa-green text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.rank-constable {
+  @apply bg-goa-saffron text-black px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.rank-analyst {
+  @apply bg-cyan-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.rank-readonly {
+  @apply bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Authentication forms */
+.auth-form {
+  @apply space-y-6 bg-card p-8 rounded-lg border border-border shadow-xl;
+}
+
+/* Navigation */
+.nav-item {
+  @apply flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+}
+
+.nav-item-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.nav-item-inactive {
+  @apply text-muted-foreground hover:text-foreground hover:bg-accent;
+}
