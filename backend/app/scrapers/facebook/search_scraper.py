@@ -641,8 +641,15 @@ class FacebookSearchScraper:
 
 async def main():
     """Test the search scraper"""
-    EMAIL = "christiano.developer05@gmail.com"
-    PASSWORD = "gymjuK-zocdit-sichi7"
+    from app.config import settings
+
+    EMAIL = settings.FB_EMAIL
+    PASSWORD = settings.FB_PASSWORD
+
+    if not EMAIL or not PASSWORD:
+        print("Error: FB_EMAIL and FB_PASSWORD must be set in your .env file.")
+        print("Please copy backend/.env.example to backend/.env and fill in your credentials.")
+        return
 
     # Test keywords (3 keywords, 3 posts each = 9 total)
     TEST_KEYWORDS = [
@@ -654,7 +661,7 @@ async def main():
     # Enable test mode to save extracted text to files
     TEST_MODE = False  # Set to True for testing (saves files, no API calls)
 
-    scraper = FacebookSearchScraper(EMAIL, PASSWORD, headless=False, test_mode=TEST_MODE)
+    scraper = FacebookSearchScraper(EMAIL, PASSWORD, headless=settings.FB_HEADLESS, test_mode=TEST_MODE)
 
     try:
         await scraper.start()

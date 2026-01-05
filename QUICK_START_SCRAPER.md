@@ -12,12 +12,17 @@ playwright install chromium
 
 ### **2. Set Your Facebook Credentials**
 
-Open `backend/app/scrapers/facebook/feed_scraper.py`
+Create a `.env` file in the `backend` directory by copying the example file:
 
-Find lines 315-316 and update:
-```python
-EMAIL = "christiano.developer05@gmail.com"
-PASSWORD = "gymjuK-zocdit-sichi7"
+```bash
+cp backend/.env.example backend/.env
+```
+
+Now, open `backend/.env` and add your Facebook credentials:
+
+```
+FB_EMAIL=your_facebook_email@example.com
+FB_PASSWORD=your_facebook_password
 ```
 
 ### **3. Run Scraper (Manual Test)**

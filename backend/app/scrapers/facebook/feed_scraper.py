@@ -311,21 +311,20 @@ class FacebookFeedScraper(FacebookBaseScraper):
 # CLI entry point for manual testing
 async def main():
     """Run feed scraper from command line"""
-    import sys
+    from app.config import settings
 
-    # Facebook credentials (update these or pass as arguments)
-    EMAIL = "christiano.developer05@gmail.com"
-    PASSWORD = "gymjuK-zocdit-sichi7"
+    EMAIL = settings.FB_EMAIL
+    PASSWORD = settings.FB_PASSWORD
 
-    if len(sys.argv) > 1:
-        EMAIL = sys.argv[1]
-    if len(sys.argv) > 2:
-        PASSWORD = sys.argv[2]
+    if not EMAIL or not PASSWORD:
+        print("Error: FB_EMAIL and FB_PASSWORD must be set in your .env file.")
+        print("Please copy backend/.env.example to backend/.env and fill in your credentials.")
+        return
 
     scraper = FacebookFeedScraper(
         email=EMAIL,
         password=PASSWORD,
-        headless=False,  # Set True for production
+        headless=settings.FB_HEADLESS,
         batch_size=10,
     )
 

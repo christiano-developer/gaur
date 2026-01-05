@@ -42,7 +42,7 @@ class Settings(BaseSettings):
         return f"postgresql+asyncpg://{self.DB_USER}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     # ==================== SECURITY SETTINGS ====================
-    SECRET_KEY: str = "your-secret-key-change-in-production-make-it-very-long-and-random"
+    SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7

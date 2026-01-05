@@ -203,7 +203,12 @@ async def create_officer(
             )
 
         # Hash password
-        password = officer_data.get("password", "changeme123")
+        password = officer_data.get("password")
+        if not password:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Password is required when creating a new officer"
+            )
         password_hash = hash_password(password)
 
         # Create officer

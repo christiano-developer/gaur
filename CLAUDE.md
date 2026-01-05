@@ -406,7 +406,7 @@ python -m scrapers.facebook_simple_scraper
 
 # Credentials are hardcoded in scraper (lines 39-40):
 email = "christiano.developer05@gmail.com"
-password = "gymjuK-zocdit-sichi7"
+# Credentials are loaded from the environment config (backend/.env)
 ```
 
 **What Gets Scraped:**

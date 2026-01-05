@@ -133,8 +133,7 @@ Your development environment is fully configured! The system is optimized for:
 
 *GAUR Enhanced System - Protecting Goa through Advanced Cyber Patrolling*
 
-- Badge: SUPER001
-    - Password: GaurAdmin2025!
+
 
 
 

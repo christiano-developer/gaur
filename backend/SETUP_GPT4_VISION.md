@@ -40,7 +40,7 @@ Create/edit `.env` file in backend directory:
 
 ```bash
 cd /Users/christianofernandes/developer/gaur/backend
-echo "OPENAI_API_KEY=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" >> .env
+echo "OPENAI_API_KEY=your-key-here" >> .env
 ```
 
 ---

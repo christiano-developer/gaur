@@ -54,8 +54,8 @@ export default function LoginPage() {
     };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary/80 p-4">
-      <Card className="w-full max-w-md p-8 bg-white/95 backdrop-blur-sm shadow-2xl">
+    <div className="min-h-screen flex items-center justify-center bg-yellow-300/40 p-4">
+      <Card className="w-full max-w-md p-8 bg-green-700/95 backdrop-blur-sm shadow-2xl">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-48 h-48 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
@@ -67,10 +67,8 @@ export default function LoginPage() {
               className="rounded-full"
             />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            GAUR Police System
-          </h1>
-          <p className="text-gray-600">Goa Anti-fraud Unified Radar</p>
+          <h1 className="text-2xl font-bold text-green-100 mb-2">GAUR</h1>
+          <p className="text-yellow-300">Goa Anti-fraud Unified Radar</p>
           {/* Tricolor accent */}
           <div className="mt-4 h-1 bg-gradient-to-r from-secondary via-white to-[#138808] rounded-full"></div>
         </div>
@@ -80,7 +78,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="badge_number"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-100 mb-2"
             >
               Badge Number
             </label>
@@ -99,7 +97,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-100 mb-2"
             >
               Password
             </label>
@@ -118,7 +116,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="two_factor_code"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-100 mb-2"
             >
               2FA Code <span className="text-gray-500">(if enabled)</span>
             </label>

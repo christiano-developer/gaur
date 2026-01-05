@@ -427,10 +427,18 @@ class FacebookFeedScraperV2:
 
 async def main():
     """Test the scraper"""
-    EMAIL = "christiano.developer05@gmail.com"
-    PASSWORD = "gymjuK-zocdit-sichi7"
+    # NOTE: This scraper is experimental. Use feed_scraper.py for production.
+    from app.config import settings
 
-    scraper = FacebookFeedScraperV2(EMAIL, PASSWORD, headless=False)
+    EMAIL = settings.FB_EMAIL
+    PASSWORD = settings.FB_PASSWORD
+
+    if not EMAIL or not PASSWORD:
+        print("Error: FB_EMAIL and FB_PASSWORD must be set in your .env file.")
+        print("Please copy backend/.env.example to backend/.env and fill in your credentials.")
+        return
+
+    scraper = FacebookFeedScraperV2(EMAIL, PASSWORD, headless=settings.FB_HEADLESS)
 
     try:
         await scraper.start()
